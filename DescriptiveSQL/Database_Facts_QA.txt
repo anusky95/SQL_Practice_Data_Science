@@ -1,0 +1,34 @@
+Why do businesses use Database?
+-Data Integrity - Correct data entered and by right people who have permissions
+-Fast Data Access - Data can be extracted quickly using SQL 
+-Shared Data - Multiple individuals can access data stored in database (consistent results)
+
+LOGICAL OPERATORS
+
+LIKE
+This allows you to perform operations similar to using WHERE and =, but for cases when you might not know exactly what you are looking for.
+
+IN
+This allows you to perform operations similar to using WHERE and =, but for more than one condition.
+
+NOT
+This is used with IN and LIKE to select all of the rows NOT LIKE or NOT IN a certain condition.
+
+AND & BETWEEN
+These allow you to combine operations where all combined conditions must be true.
+
+OR
+This allow you to combine operations where at least one of the combined conditions must be true.
+
+Primary keys - are unique for every row in a table. These are generally the first column in our database (like you saw with the id column for every table in the Parch & Posey database).
+
+foreign keys - are the primary key appearing in another table, which allows the rows to be non-unique.
+
+Choosing the set up of data in our database is very important, but not usually the job of a data analyst. This process is known as Database Normalization.
+
+JOINs
+The three JOIN statements you are most likely to use are:
+
+JOIN - an INNER JOIN that only pulls data that exists in both tables.
+LEFT JOIN - a way to pull all of the rows from the table in the FROM even if they do not exist in the JOIN statement.
+RIGHT JOIN - a way to pull all of the rows from the table in the JOIN even if they do not exist in the FROM statement.
