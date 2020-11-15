@@ -74,7 +74,7 @@ WHERE name not like '%s%';
 /* SELECT if employee names are Tom, Joe or Harry */
 SELECT *
 FROM employee
-WHERE in ('Tom','Joe','Harry');
+WHERE names in ('Tom','Joe','Harry');
 
 
 /* SELECT records where salary is greater than 1000 and less than 2000 */
@@ -86,8 +86,8 @@ salary <=2000;
 /* using between */
 SELECT *
 FROM salarydetails
-WHERE salary >= 1000 and 
-salary <=2000;
+WHERE salary between 1000 and 2000;
+
 
 
 /* Write a query that returns a list of orders where the standard_qty 
