@@ -71,11 +71,37 @@ FROM orders
 WHERE name not like '%s%';
 
 
+/* Finds any values that have "r" in the second position */
+WHERE CustomerName LIKE '_r%'	
+
+/*Finds any values that starts with "a" and are at least 3 characters in length _ is the wildcard */
+WHERE CustomerName LIKE 'a_%_%'	
+
+/* The following SQL statement selects all customers with a City starting with "b", "s", or "p": */
+SELECT * FROM Customers
+WHERE City LIKE '[bsp]%';
+
+/* The following SQL statement selects all customers with a City starting with "a", "b", or "c": */
+SELECT * FROM Customers
+WHERE City LIKE '[a-c]%';
+
+/* The following SQL statement selects all customers with a City not starting with "b", "s", or "p": */
+
+SELECT * FROM Customers
+WHERE City LIKE '[!bsp]%';
+
+SELECT * FROM Customers
+WHERE City NOT LIKE '[bsp]%';
+
 /* SELECT if employee names are Tom, Joe or Harry */
 SELECT *
 FROM employee
 WHERE names in ('Tom','Joe','Harry');
 
+
+/* The following SQL statement selects all customers that are from the same countries as the suppliers: */
+SELECT * FROM Customers
+WHERE Country IN (SELECT Country FROM Suppliers);
 
 /* SELECT records where salary is greater than 1000 and less than 2000 */
 SELECT *
@@ -98,5 +124,43 @@ FROM ORDERS
 WHERE standard_qty=0
 AND (gloss_qty>1000
 OR poster_qty>1000);
+
+
+/* Select the first n recs from the customer table */
+SELECT TOP N * FROM Customers;
+
+/* **********
+AGGREGATE FUNCTIONS
+****************/
+
+/* Select the smallest sale amount in the sales table */
+SELECT MIN(Sales) as SmallestPrice
+from SalesTable;
+
+/* Select the biggest sale amount in the sales table */
+
+SELECT MIN(Sales) as SmallestPrice
+from SalesTable;
+
+/* Get the number of rows which have country as France from Employee table */
+SELECT Count(*) 
+FROM Employee
+Where Country='France'
+
+/* Find the average sales for the year 2019 from SalesTable*/
+SELECT AVG(Sales)
+FROM SalesTable
+WHERE Year=2019;
+
+/* Find the max sales for the year 2019 from SalesTable*/
+SELECT max(Sales) as m
+FROM SalesTable
+WHERE Year=2019;
+
+
+/* Start here https://www.w3schools.com/sql/sql_between.asp */
+
+
+
 
 
